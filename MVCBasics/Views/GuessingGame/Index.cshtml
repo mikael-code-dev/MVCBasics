@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Guessing Game - SunCode Media";
+}
+
+<div class="guessing-game-splash">
+    <h1 class=" font-oswald">Guessing Game</h1>
+    <h2 class=" font-oswald">Guess the right number</h2>
+</div>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header  font-oswald" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                RULES
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>You have to guess a number between 0-100.</strong> Try to guess using as few guesses as possible. You should be able to guess the right number in six guesses.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <form asp-controller="GuessingGame" asp-action="Index" class="temp-form">
+        <div>
+            <label class="form-label font-oswald" for="numGuess">Guess the number:</label>
+            <input class="form-control" type="number" name="numGuess" min="1" max="99" autofocus />
+        </div>
+
+        <button type="submit" class="btn btn-info fw-bold guess-button font-oswald">GUESS!</button>
+    </form>
+</div>
+
+@if (ViewBag.MessageEval != null)
+{
+    <div class="game-message-box">
+        <p class="bad-guess">
+            @ViewBag.MessageEval
+        </p>
+        <p>
+            Guess No: @ViewBag.NoOfGuesses
+        </p>
+    </div>
+}
+
+@if (ViewBag.MessageWin != null)
+{
+    <div class="game-message-box-win">
+        <p>
+            @ViewBag.MessageWin
+        </p>
+    </div>
+}
