@@ -1,0 +1,27 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            @*<th>Id</th>*@
+            <th>Name</th>
+            <th>PhoneNo</th>
+            <th>City</th>
+            <th>Handle People</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model.tempList)
+        {
+            <tr>
+                @*<td>@person.Id</td>*@
+                <td>@person.Name</td>
+                <td>@person.PhoneNumber</td>
+                <td>@person.City</td>
+                <td>
+
+                    <a asp-action="PersonDelete" asp-route-id="@person.Id" class="btn btn-dark">Delete Person</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

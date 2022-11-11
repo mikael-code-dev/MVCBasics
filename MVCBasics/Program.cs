@@ -13,6 +13,13 @@ app.UseSession();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.MapControllerRoute(
+    name: "ajax",
+    pattern: "ajax");
+
+app.MapControllerRoute(
+    name: "persons",
+    pattern: "persons");
 
 app.MapControllerRoute(
     name: "checkfever",
@@ -21,7 +28,8 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "guessinggame",
-    pattern: "GuessingGame");
+    pattern: "GuessingGame"
+    );
 
 app.MapControllerRoute(
     name: "default",

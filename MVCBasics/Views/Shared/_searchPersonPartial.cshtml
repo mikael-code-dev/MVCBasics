@@ -1,0 +1,18 @@
+﻿@model PeopleViewModel
+
+<div class="create-person-form">
+    <h2>Search for people</h2>
+
+    <form asp-controller="People" asp-action="SearchPerson" method="post">
+
+        <div class="mb-1">
+            <label for="searchTerm">Just search:</label>
+            <input type="text" name="searchTerm" />
+        </div>
+
+        <div class="mb-1">
+            <input type="submit" value="Search" class="btn btn-light" />
+        </div>
+
+    </form>
+</div>

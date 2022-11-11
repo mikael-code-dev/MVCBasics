@@ -1,0 +1,19 @@
+﻿@model PeopleViewModel
+@{
+    ViewData["Title"] = "Persons Index View";
+}
+
+<partial name="_searchPersonPartial" />
+
+<div class="search-box"></div>
+
+<partial name="_createPersonPartial" model="@Model.CreatePerson" />
+
+<hr />
+<h1 class="people-list-header">List of people</h1>
+<hr />
+
+@foreach(var person in @Model.tempList)
+{
+    <partial name="_listPeoplePartial" model="person" />
+}

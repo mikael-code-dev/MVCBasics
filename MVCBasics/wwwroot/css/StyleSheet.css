@@ -1,6 +1,31 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
+header a {
+    font-family: Oswald;
+}
+
+.navbar-nav li {
+    position: relative;
+}
+
+.navbar-nav a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    opacity: 0;
+    left: 10px;
+    transition: opacity 0.3s linear, left 0.6s, width 0.8s;
+}
+
+.navbar-nav a:hover::before {
+    opacity: 1;
+    left: 30px;
+    width: 20%;
+}
+
 .main-content a {
     color: lightseagreen;
     text-decoration: none;
@@ -100,7 +125,7 @@ footer.container-fluid {
 
 .accordion-body {
     font-family: "Poor Story", sans-serif;
-    font-size:1.4rem
+    font-size: 1.4rem
 }
 
 .guess-button {
@@ -122,4 +147,50 @@ footer.container-fluid {
 .game-message-box-win p {
     text-align: center;
     color: green;
+}
+
+/*   *****   PARTIAL Create Person   *****   */
+.create-person-form {
+    /*background-color: red;*/
+    width: 400px;
+    margin: auto;
+}
+
+    .create-person-form h2 {
+        text-align: left;
+    }
+
+.create-person-form,
+.people-list-header {
+    font-family: Oswald;
+}
+
+    .create-person-form div input {
+        width: 100%
+    }
+
+tbody a::before,
+.table-partial a::before,
+.ajax a::before {
+    opacity: 0;
+}
+
+.ajax {
+    text-align: center;
+    font-family: Oswald;
+}
+
+    .ajax button {
+        border-radius: 1.4rem;
+        padding: 1.4rem;
+        margin-right: 1rem;
+        font-size: 21px;
+    }
+
+.search-box {
+    margin-bottom: 40px;
+}
+
+.last-piece-of-code {
+font-family: Oswald;
 }

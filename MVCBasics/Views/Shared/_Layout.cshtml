@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿ <!DOCTYPE html>
 
 <html>
 <head>
@@ -7,6 +7,7 @@
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </head>
 <body>
     <header>
@@ -24,6 +25,8 @@
                         <li class="nav-link"><a asp-controller="Home" asp-action="Projects" class="nav-link">Projects</a></li>
                         <li class="nav-link"><a asp-controller="Doctor" asp-action="CheckFever" class="nav-link">DOCTOR</a></li>
                         <li class="nav-link"><a asp-controller="GuessingGame" asp-action="Index" class="nav-link">GuessingGame</a></li>
+                        <li class="nav-link"><a asp-controller="People" asp-action="Index" class="nav-link">Persons</a></li>
+                        <li class="nav-link"><a asp-controller="Ajax" asp-action="Index" class="nav-link">Ajax</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,5 +40,6 @@
     <footer class="container-fluid my-4">
         <span class="fw-bold">&copy; SunCode Media @DateTime.Now.Year</span>
     </footer>
+
 </body>
 </html>

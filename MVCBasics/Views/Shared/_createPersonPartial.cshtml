@@ -1,0 +1,37 @@
+﻿@model PersonViewModel
+
+<div class="create-person-form">
+    <h2>Add a new Person</h2>
+
+    <form asp-controller="People" asp-action="CreatePerson">
+
+        @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+
+        <div class="mb-3">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control"  />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="City" class="control-label"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+
+        <input type="submit" value="Add Person" class="btn btn-info" />
+        <input type="reset" value="Reset" class="btn btn-dark" />
+    </form>
+</div>
+
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }*@
