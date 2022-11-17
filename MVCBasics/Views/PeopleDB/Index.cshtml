@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Person>
+@{
+    ViewData["Title"] = "People DB";
+}
+
+<div class="add-person-database">
+    <a asp-action="CreatePerson" class="btn btn-dark btn-lg">Add Person to the Database</a>
+</div>
+
+<h1>List of People in Database</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <partial name="_listPeopleDBPartial" model="person" />
+        }
+    </tbody>
+</table>

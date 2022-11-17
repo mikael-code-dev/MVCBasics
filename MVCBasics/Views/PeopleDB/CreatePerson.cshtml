@@ -1,0 +1,32 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "Add Person to Database";
+}
+
+<h1>Add a new Person</h1>
+
+<form asp-controller="PeopleDB" asp-action="CreatePerson" method="Post" class="create-person-form-db">
+
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="City"></label>
+        <input asp-for="City" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-section">
+        <input type="submit" value="CREATE PERSON" class="my-button-db" />
+    </div>
+
+</form>
