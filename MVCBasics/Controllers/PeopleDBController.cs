@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCBasics.Data;
 using MVCBasics.Models;
+using MVCBasics.ViewModels;
 
 namespace MVCBasics.Controllers
 {
     public class PeopleDBController : Controller
     {
         readonly ApplicationDbContext _context;
+        public static PeopleViewModel vm = new PeopleViewModel();
 
         public PeopleDBController(ApplicationDbContext context)
         {
@@ -41,15 +43,19 @@ namespace MVCBasics.Controllers
         [HttpPost]
         public IActionResult CreatePerson(Person person)
         {
+            PersonViewModel pwm = new PersonViewModel();
+
             ModelState.Remove("Id");
             if (ModelState.IsValid)
             {
                 person.Id = Guid.NewGuid().ToString();
                 _context.People.Add(person);
                 _context.SaveChanges();
+
+                return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
+            return View(pwm);
         }
     }
 }
